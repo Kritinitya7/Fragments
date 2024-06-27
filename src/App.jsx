@@ -1,21 +1,18 @@
 import "./App.css";
+import ErrorMessage from "./assets/components/ErrorMessage";
+import FoodItems from "./assets/components/FoodItems";
 // import React from "react";
 
 function App() {
-  let foodItems = [];
-  // let foodItems = ["Dal", "Rice", "Pulao", "Biryani"];
+  // let foodItems = [];
+  let foodItems = ["sabzi", "Green Vegetable", "Roti", "Salad", "Milk", "Ghee"];
 
   return (
     <>
       <h1>Healthy Food</h1>
-      {foodItems.length == 0 && <h3>I am still Hungary.</h3>}
-      <ul className="list-group">
-        {foodItems.map((item) => (
-          <li key={item} className="list-group-item">
-            {item}
-          </li>
-        ))}
-      </ul>
+      <ErrorMessage items={foodItems}></ErrorMessage>
+
+      <FoodItems items={foodItems}></FoodItems>
     </>
   );
 }
